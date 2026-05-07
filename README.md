@@ -221,8 +221,10 @@ ChatGPT Assistant Leak, Jailbreak Prompts, GPT Hacking, GPT Agents Hack, System 
 
 Im Ordner `tools/` findest du einen einfachen deutschen Paraphraser:
 
-- Python direkt:
+- Python direkt (als Argument):
   - `python3 tools/paraphraser_de.py "Das ist ein wichtiger und guter Plan."`
+- Interaktiv (du wirst zur Eingabe aufgefordert):
+  - `python3 tools/paraphraser_de.py`
 - Shell-Wrapper:
   - `./tools/paraphraser_de.sh "Das ist ein wichtiger und guter Plan."`
 - Mit Pipe:

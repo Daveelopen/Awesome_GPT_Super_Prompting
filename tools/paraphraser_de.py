@@ -12,6 +12,7 @@ import argparse
 import random
 import re
 import sys
+from typing import Final
 
 SYNONYMS = {
     "wichtig": "entscheidend",
@@ -34,6 +35,8 @@ SYNONYMS = {
     "viele": "zahlreiche",
     "wenige": "einige",
 }
+
+PROMPT: Final[str] = "Bitte gib deinen deutschen Text ein und drücke Enter:\n> "
 
 OPENERS = [
     "Zusammengefasst:",
@@ -90,11 +93,14 @@ def main() -> int:
     args = parser.parse_args()
 
     raw = " ".join(args.text).strip()
-    if not raw:
+    if not raw and not sys.stdin.isatty():
         raw = sys.stdin.read().strip()
 
+    if not raw and sys.stdin.isatty():
+        raw = input(PROMPT).strip()
+
     if not raw:
-        print("Fehler: Kein Text übergeben. Übergib Text oder pipe ihn über STDIN.", file=sys.stderr)
+        print("Fehler: Kein Text übergeben. Übergib Text, nutze Pipe oder interaktive Eingabe.", file=sys.stderr)
         return 1
 
     print(paraphrase(raw, add_opener=args.opener))

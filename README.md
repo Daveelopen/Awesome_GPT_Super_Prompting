@@ -214,3 +214,25 @@ Specialized GPT agents focused on cybersecurity and more.
 
 ### Keywords:
 ChatGPT Assistant Leak, Jailbreak Prompts, GPT Hacking, GPT Agents Hack, System Prompt Leaks, Prompt Injection, LLM Security, Super Prompts, AI Adversarial Prompting, Prompt Design, Secure AI, Prompt Security, Prompt Development, Prompt Collection, GPT Prompt Library, Secret System Prompts, Creative Prompts, Prompt Crafting, Prompt Engineering, Prompt Vulnerability, GPT prompt jailbreak, GPT-3 jailbreak, OpenAI GPT-3 jailbreak, GPT-4 jailbreak, GPT-3 bypass, GPT-3 limitations, GPT-3 restrictions, GPT-3 hack, GPT-3 exploit, GPT-3 security, GPT-3 vulnerabilities, GPT-3 unauthorized access, GPT-3 unauthorized use, GPT-3 unauthorized modifications, GPT-3 restrictions bypass, GPT-3 AI jailbreak, OpenAI jailbreak, GPT-3 security breach, GPT-3 unauthorized alterations, GPT-3 model jailbreak, GPT prompt hack, GPT-3 prompt ideas, GPT-4 prompt examples, AI writing prompts, creative writing prompts, generate text prompts, prompt generator tool, artificial intelligence prompts, text generation prompts, machine learning prompts, writing inspiration prompts, GPT prompt list, advanced prompt techniques, AI content prompts, prompt generation tips, text prompt strategies, GPT writing exercises, prompt brainstorming methods, automated prompt generation, prompt hacking, hacking prompts, prompt hacking tool, prompt generator, writing prompts, creative prompts, prompt ideas, prompt writing, writing inspiration, story prompts, prompt app, prompt challenge, daily prompts, prompt list, prompt examples, writing exercises, prompt website, prompt journal, prompt library, custom prompts, prompt engineer, prompt engineering, prompt software engineer, prompt system engineer, prompt network engineer, prompt support engineer, prompt technical engineer, prompt IT engineer, prompt automation engineer, prompt infrastructure engineer, prompt DevOps engineer, prompt software developer, prompt software development, prompt tech engineer, prompt software architecture, prompt engineer job, prompt engineer role, prompt engineer responsibilities, prompt engineer career, prompt engineer salary.
+
+---
+
+## Convert ChatGPT export to Markdown
+
+OpenAI/ChatGPT exports usually ship as a ZIP file with a large `conversations.json` inside. That JSON is optimized for machines, so this repository includes a small local converter that turns it into readable Markdown without uploading the archive to another service.
+
+```bash
+python3 tools/chatgpt_export_to_markdown.py path/to/chatgpt-export.zip -o chatgpt_markdown_export
+```
+
+The converter also accepts `conversations.json` directly:
+
+```bash
+python3 tools/chatgpt_export_to_markdown.py path/to/conversations.json -o chatgpt_markdown_export
+```
+
+Output:
+
+- `000_INDEX.md` with a chronological conversation overview
+- one Markdown file per conversation
+- `chatgpt_markdown_export.zip` unless `--no-zip` is passed

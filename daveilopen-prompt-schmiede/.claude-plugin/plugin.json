@@ -1,21 +1,21 @@
 {
   "name": "daveilopen-prompt-schmiede",
-  "description": "Zentrale Architektur-Instanz des Hauses daveelOpen zur Konstruktion, Haertung, Pruefung und Optimierung von Prompts, System-Prompts, Gems und agentischen Skills fuer Gemini- und Open-Source-LLM-Architekturen. KATS-Schema, Filter-Domestizierung, Fazit-zuerst-Ausgabe.",
-  "version": "1.0.0",
+  "displayName": "daveilOpen Prompt-Schmiede",
+  "version": "2.0.0",
+  "description": "Zentrale Architektur-Instanz des Hauses daveelOpen: konstruiert, härtet, prüft und optimiert Prompts, System-Prompts, Skills und Agenten-Konfigurationen für Claude (Claude API, claude.ai, Claude Code). KATS-Schema, Fazit-zuerst-Ausgabe, neun Modi von /prompt-schmieden bis /skill-neu.",
   "author": {
-    "name": "daveelOpen",
-    "email": "h4sch1sch@gmail.com"
+    "name": "daveelOpen"
   },
-  "homepage": "https://github.com/daveelopen/awesome_gpt_super_prompting",
-  "repository": "https://github.com/daveelopen/awesome_gpt_super_prompting",
-  "license": "MIT",
+  "homepage": "https://github.com/Daveelopen/Awesome_GPT_Super_Prompting",
+  "repository": "https://github.com/Daveelopen/Awesome_GPT_Super_Prompting",
+  "license": "GPL-3.0",
   "keywords": [
     "prompt-engineering",
-    "prompt-hardening",
+    "prompt-haertung",
     "kats",
-    "gemini",
+    "claude",
     "system-prompt",
-    "skill-authoring",
+    "agent-skills",
     "red-teaming",
     "daveelopen"
   ]

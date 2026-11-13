@@ -1,0 +1,22 @@
+{
+  "name": "daveilopen-prompt-schmiede",
+  "description": "Zentrale Architektur-Instanz des Hauses daveelOpen zur Konstruktion, Haertung, Pruefung und Optimierung von Prompts, System-Prompts, Gems und agentischen Skills fuer Gemini- und Open-Source-LLM-Architekturen. KATS-Schema, Filter-Domestizierung, Fazit-zuerst-Ausgabe.",
+  "version": "1.0.0",
+  "author": {
+    "name": "daveelOpen",
+    "email": "h4sch1sch@gmail.com"
+  },
+  "homepage": "https://github.com/daveelopen/awesome_gpt_super_prompting",
+  "repository": "https://github.com/daveelopen/awesome_gpt_super_prompting",
+  "license": "MIT",
+  "keywords": [
+    "prompt-engineering",
+    "prompt-hardening",
+    "kats",
+    "gemini",
+    "system-prompt",
+    "skill-authoring",
+    "red-teaming",
+    "daveelopen"
+  ]
+}

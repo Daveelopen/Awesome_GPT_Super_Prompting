@@ -1,0 +1,22 @@
+{
+  "name": "daveilopen-prompt-schmiede",
+  "displayName": "daveilOpen Prompt-Schmiede",
+  "version": "2.1.0",
+  "description": "Zentrale Architektur-Instanz des Hauses daveelOpen: konstruiert, härtet, prüft und optimiert Prompts, System-Prompts, Skills und Agenten-Konfigurationen für Claude (Claude API, claude.ai, Claude Code). KATS-Schema, Fazit-zuerst-Ausgabe, neun Modi von /prompt-schmieden bis /skill-neu.",
+  "author": {
+    "name": "daveelOpen"
+  },
+  "homepage": "https://github.com/Daveelopen/Awesome_GPT_Super_Prompting",
+  "repository": "https://github.com/Daveelopen/Awesome_GPT_Super_Prompting",
+  "license": "GPL-3.0",
+  "keywords": [
+    "prompt-engineering",
+    "prompt-haertung",
+    "kats",
+    "claude",
+    "system-prompt",
+    "agent-skills",
+    "red-teaming",
+    "daveelopen"
+  ]
+}

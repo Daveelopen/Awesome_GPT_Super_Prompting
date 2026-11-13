@@ -1,0 +1,16 @@
+{
+  "name": "daveelopen",
+  "owner": {
+    "name": "daveelOpen"
+  },
+  "metadata": {
+    "description": "Plugins des Hauses daveelOpen für Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "daveilopen-prompt-schmiede",
+      "source": "./daveilopen-prompt-schmiede",
+      "description": "Konstruiert, härtet, prüft und optimiert Prompts, System-Prompts, Skills und Agenten-Konfigurationen für Claude nach dem KATS-Schema."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 name: prompt-schmiede
-description: Zentrale Prompt-Schmiede des Hauses daveelOpen. Baut, härtet, prüft und optimiert Prompts, System-Prompts, Skills und Agenten-Konfigurationen für Claude nach dem KATS-Schema und routet die °-Steuerbefehle (°prompt, °claude-werkstatt, °hart, °folterkammer, °kuerzen, °reparieren, °klonen, °duell, °skill-neu) in den passenden Modus. Greift bei °°, °hilfe oder °? sowie bei jeder Prompt-Engineering-Anfrage, die keinem einzelnen Modus eindeutig zuzuordnen ist.
+description: Zentrale Prompt-Schmiede des Hauses daveelOpen. Baut, härtet, prüft und optimiert Prompts, System-Prompts, Skills und Agenten-Konfigurationen für Claude nach dem KATS-Schema und routet die °-Steuerbefehle (°prompt, °daveelopen-werkstatt, °hart, °folterkammer, °kuerzen, °reparieren, °klonen, °duell, °skill-neu) in den passenden Modus. Greift bei °°, °hilfe oder °? sowie bei jeder Prompt-Engineering-Anfrage, die keinem einzelnen Modus eindeutig zuzuordnen ist.
 argument-hint: "[°befehl] <material>"
 ---
 
@@ -10,7 +10,7 @@ argument-hint: "[°befehl] <material>"
 $ARGUMENTS
 </material>
 
-Ist der Block leer, ist das Material der Text des Nutzers nach dem Trigger. Lies zuerst die Hausdoktrin `${CLAUDE_PLUGIN_ROOT}/skills/prompt-schmiede/references/doktrin.md`; sie gilt für jeden Modus.
+Ist der Block leer, ist das Material der Text des Nutzers nach dem Trigger. Lies zuerst die Hausdoktrin `${CLAUDE_PLUGIN_ROOT}/skills/daveelopen-werkstatt/references/doktrin.md`; sie gilt für jeden Modus.
 
 ## Routing
 
@@ -19,7 +19,7 @@ Erkenne den Modus am führenden Trigger — Symbol `°…`, Slash-Befehl oder ei
 | Symbol | Slash | Modus | Leistung |
 |---|---|---|---|
 | `°prompt` | `/prompt-schmieden` | Schmieden | rohe Idee → produktionsreifer Prompt |
-| `°claude-werkstatt` | `/claude-werkstatt` | Claude-Werkstatt | Prompt auf Claude zuschneiden: System-Prompt, Request-Parameter, Tools, claude.ai-Projekt, Claude Code |
+| `°daveelopen-werkstatt` (alt: `°claude-werkstatt`) | `/daveelopen-werkstatt` | Werkstatt | Prompt auf Claude zuschneiden: System-Prompt, Request-Parameter, Tools, claude.ai-Projekt, Claude Code |
 | `°hart` | `/haerten` | Härten | Weichmacher, Druck-Sprache, Widersprüche, Fehltrigger raus; begründete Schranken rein |
 | `°folterkammer` | `/folterkammer` | Folterkammer | Red-Teaming: Drift, Injection, Jailbreak, Halluzination, Claude-Fallstricke |
 | `°kuerzen` | `/kuerzen` | Kürzen | Token-Kompression ohne Verlust von Kontext, Gründen und Schranken |

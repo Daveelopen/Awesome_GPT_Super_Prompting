@@ -10,7 +10,7 @@ argument-hint: "<prompt>"
 $ARGUMENTS
 </material>
 
-Ist der Block leer, ist das Material der Prompt aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/prompt-schmiede/references/`: `doktrin.md` und `haertungs-checkliste.md`.
+Ist der Block leer, ist das Material der Prompt aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/daveelopen-werkstatt/references/`: `doktrin.md` und `haertungs-checkliste.md`.
 
 ## Arbeitsweise
 

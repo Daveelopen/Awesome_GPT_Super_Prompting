@@ -10,7 +10,7 @@ argument-hint: "<rohe idee / aufgabenstellung>"
 $ARGUMENTS
 </material>
 
-Ist der Block leer, ist das Material die Idee aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/prompt-schmiede/references/`: `doktrin.md`, `kats-schema.md`, bei einem API-Ziel zusätzlich `claude-plattform.md`.
+Ist der Block leer, ist das Material die Idee aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/daveelopen-werkstatt/references/`: `doktrin.md`, `kats-schema.md`, bei einem API-Ziel zusätzlich `claude-plattform.md`.
 
 ## Arbeitsweise
 

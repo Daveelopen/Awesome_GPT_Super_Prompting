@@ -30,7 +30,7 @@ Jeder Modus ist auf drei Wegen erreichbar: Symbol-Trigger `°…` im Chat, Kurzf
 | Symbol | Slash (Kurzform) | Funktion |
 |---|---|---|
 | `°prompt` | `/prompt-schmieden` | Rohe Idee → produktionsreifer Prompt, bei API-Ziel mit Request-Parametern |
-| `°claude-werkstatt` | `/claude-werkstatt` | Prompt auf Claude zuschneiden: System-Prompt, Request-Parameter, Tools — oder als claude.ai-Projekt, CLAUDE.md, Skill, Subagent. Portiert auch GPT-Prompts und Gemini-Gems |
+| `°daveelopen-werkstatt` (alt: `°claude-werkstatt`) | `/daveelopen-werkstatt` | Prompt auf Claude zuschneiden: System-Prompt, Request-Parameter, Tools — oder als claude.ai-Projekt, CLAUDE.md, Skill, Subagent. Portiert auch GPT-Prompts und Gemini-Gems. Läuft auch eigenständig auf claude.ai |
 | `°hart` | `/haerten` | Weichmacher, Druck-Sprache, Widersprüche, Fehltrigger raus; begründete, prüfbare Schranken rein |
 | `°folterkammer` | `/folterkammer` | Red-Teaming über 12 Vektoren (7 allgemeine + 5 Claude-spezifische) |
 | `°kuerzen` | `/kuerzen` | Token-Kompression ohne Verlust von Kontext, Gründen, Schranken — jede Streichung belegt |
@@ -75,23 +75,39 @@ Lokal ausprobieren, ohne zu installieren:
 claude --plugin-dir ./daveilopen-prompt-schmiede
 ```
 
+### Werkstatt auf claude.ai
+
+Die `daveelopen-werkstatt` ist als einziger Skill des Plugins in sich geschlossen und
+lässt sich einzeln auf claude.ai hochladen. ZIP aus dem Ordner `skills/` bauen, damit
+der Skill-Ordner die oberste Ebene des Archivs ist:
+
+```bash
+cd daveilopen-prompt-schmiede/skills && zip -r daveelopen-werkstatt.zip daveelopen-werkstatt
+```
+
+Dann auf claude.ai unter **Customize > Skills** hochladen und den Skill einschalten.
+Voraussetzung ist ein Plan mit Skills und eingeschalteter Code-Ausführung. Ausgelöst
+wird er im Chat mit `°daveelopen-werkstatt` oder einer Bitte wie „optimiere diesen
+Prompt für Claude".
+
 ## 5. Struktur
 
 ```
 daveilopen-prompt-schmiede/
 ├── .claude-plugin/
-│   └── plugin.json
+│   ├── plugin.json
+│   └── icon.png
 ├── skills/
-│   ├── prompt-schmiede/            # Router: °-Trigger, °hilfe, Modus-Wahl
+│   ├── prompt-schmiede/SKILL.md    # Router: °-Trigger, °hilfe, Modus-Wahl
+│   ├── daveelopen-werkstatt/       # eigenständig, claude.ai-tauglich
 │   │   ├── SKILL.md
-│   │   └── references/
+│   │   └── references/             # gemeinsame Wissensbasis aller Modi
 │   │       ├── doktrin.md          # Hausdoktrin + Ausgabeformat (gilt für alle Modi)
 │   │       ├── kats-schema.md      # Bauplan für Claude-Prompts
 │   │       ├── haertungs-checkliste.md
 │   │       ├── folterkammer-matrix.md
 │   │       └── claude-plattform.md # einzige Stelle mit API-Fakten, mit Stand-Datum
 │   ├── prompt-schmieden/SKILL.md
-│   ├── claude-werkstatt/SKILL.md
 │   ├── haerten/SKILL.md
 │   ├── folterkammer/SKILL.md
 │   ├── kuerzen/SKILL.md
@@ -102,8 +118,10 @@ daveilopen-prompt-schmiede/
 └── README.md
 ```
 
-Die Modus-Skills sind schlank und laden die gemeinsame Wissensbasis bei Bedarf über
-`${CLAUDE_PLUGIN_ROOT}` — jede Regel steht an genau einer Stelle.
+Die gemeinsame Wissensbasis liegt im Ordner der Werkstatt, weil claude.ai einem
+hochgeladenen Skill nur seinen eigenen Ordner mitgibt. Die Werkstatt liest sie über
+relative Pfade, alle anderen Modi über `${CLAUDE_PLUGIN_ROOT}` — jede Regel steht an
+genau einer Stelle.
 
 ## 6. Was „für Claude optimiert" konkret heißt
 
@@ -125,18 +143,32 @@ Die Modus-Skills sind schlank und laden die gemeinsame Wissensbasis bei Bedarf �
 
 ## 7. Hinweise & Grenzen
 
-- **`claude-werkstatt` und Portabilität:** Der Skill-Name enthält das Wort `claude`.
-  In Claude Code funktioniert das (Validator ohne Einwand); die Agent-Skills-Spezifikation
-  für claude.ai und die Skills-API reserviert das Wort aber. Wer den Skill dorthin
-  hochladen will, benennt ihn um (z. B. `werkstatt`).
+- **claude.ai:** Nur die `daveelopen-werkstatt` ist für den Einzel-Upload gebaut.
+  Die übrigen Modi nutzen `${CLAUDE_PLUGIN_ROOT}`, `$ARGUMENTS` und `argument-hint`,
+  die es nur in Claude Code gibt.
+- **Alter Befehl:** `/claude-werkstatt` existiert seit 2.1.0 nicht mehr; der Trigger
+  `°claude-werkstatt` wird weiter erkannt.
 - **Plattform-Fakten veralten.** Stand 2026-11-13 in
-  `skills/prompt-schmiede/references/claude-plattform.md`. Ändert sich die API,
+  `skills/daveelopen-werkstatt/references/claude-plattform.md`. Ändert sich die API,
   wird nur diese Datei aktualisiert. Mit Web-Werkzeugen prüft die Schmiede
   entscheidende Fakten selbst gegen die aktuelle Doku.
 - **Folterkammer und Duell sind Schreibtisch-Analysen.** Befunde heißen „erwartet",
   bis sie mit echten Läufen belegt sind; dafür liefern beide Modi Testfälle mit.
 
-## 8. Änderungen in 2.0.0
+## 8. Änderungen
+
+### 2.1.0
+
+- `claude-werkstatt` heißt jetzt `daveelopen-werkstatt` (Slash-Befehl `/daveelopen-werkstatt`),
+  weil die Agent-Skills-Spezifikation `claude` im Skill-Namen für claude.ai reserviert.
+  `°claude-werkstatt` bleibt als Trigger erhalten.
+- Werkstatt in sich geschlossen und claude.ai-tauglich: nur portable Frontmatter-Felder
+  (`name`, `description`, `license`), relative Pfade, kein `$ARGUMENTS`.
+- Gemeinsame Wissensbasis von `prompt-schmiede/references/` nach
+  `daveelopen-werkstatt/references/` verschoben; alle Modi verweisen dorthin.
+- Plugin-Icon `.claude-plugin/icon.png` (1600 × 1600 px).
+
+### 2.0.0
 
 - Zielplattform von Gemini auf **Claude** umgestellt; `/claude-werkstatt`
   optimiert jetzt für Claude (Gemini-Gems und GPT-Prompts werden nach Claude portiert).
@@ -157,7 +189,7 @@ Die Modus-Skills sind schlank und laden die gemeinsame Wissensbasis bei Bedarf �
 /prompt-schmieden Ein Prompt, der aus einem Supportticket Kategorie,
 Dringlichkeit und Antwortentwurf als JSON zieht.
 
-/claude-werkstatt <Gemini-Gem-Anweisung einfügen> ziel: claude.ai
+/daveelopen-werkstatt <Gemini-Gem-Anweisung einfügen> ziel: claude.ai
 
 /haerten <weichen Prompt einfügen>
 

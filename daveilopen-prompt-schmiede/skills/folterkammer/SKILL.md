@@ -10,7 +10,7 @@ argument-hint: "<prompt> [optional: transkripte echter läufe]"
 $ARGUMENTS
 </material>
 
-Ist der Block leer, ist das Material der Prompt aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/prompt-schmiede/references/`: `doktrin.md`, `folterkammer-matrix.md` und `claude-plattform.md` (für die Vektoren 10–12).
+Ist der Block leer, ist das Material der Prompt aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/daveelopen-werkstatt/references/`: `doktrin.md`, `folterkammer-matrix.md` und `claude-plattform.md` (für die Vektoren 10–12).
 
 ## Arbeitsweise
 

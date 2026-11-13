@@ -10,7 +10,7 @@ argument-hint: "<defekter prompt/skill> [symptom]"
 $ARGUMENTS
 </material>
 
-Ist der Block leer, ist das Material der defekte Prompt oder Skill aus der Nachricht des Nutzers, gegebenenfalls mit Symptom (Fehlermeldung, Fehlverhalten, Beispielausgabe). Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/prompt-schmiede/references/`: `doktrin.md`, `kats-schema.md`, `haertungs-checkliste.md`; bei Request-Konfiguration oder Skills zusätzlich `claude-plattform.md`.
+Ist der Block leer, ist das Material der defekte Prompt oder Skill aus der Nachricht des Nutzers, gegebenenfalls mit Symptom (Fehlermeldung, Fehlverhalten, Beispielausgabe). Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/daveelopen-werkstatt/references/`: `doktrin.md`, `kats-schema.md`, `haertungs-checkliste.md`; bei Request-Konfiguration oder Skills zusätzlich `claude-plattform.md`.
 
 ## Arbeitsweise
 

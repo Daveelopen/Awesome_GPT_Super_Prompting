@@ -1,16 +1,14 @@
 ---
-name: claude-werkstatt
-description: Schneidet einen vorhandenen Prompt auf Claude zu — System-Prompt, Nutzer-Turn-Vorlage und Request-Parameter (adaptives Thinking, Effort, Structured Outputs, strict Tools, Caching-Reihenfolge) oder als claude.ai-Projektanweisung, CLAUDE.md, Skill oder Subagent. Portiert auch Prompts und Gems aus GPT oder Gemini nach Claude. Greift bei °claude-werkstatt, /claude-werkstatt oder der Bitte, einen Prompt für Claude, die Claude API, claude.ai oder Claude Code zu optimieren oder umzuziehen.
-argument-hint: "<prompt> [ziel: api | claude.ai | claude-code]"
+name: daveelopen-werkstatt
+description: Schneidet einen vorhandenen Prompt auf Claude zu — System-Prompt, Nutzer-Turn-Vorlage und Request-Parameter (adaptives Thinking, Effort, Structured Outputs, strict Tools, Caching-Reihenfolge) oder als claude.ai-Projektanweisung, CLAUDE.md, Skill oder Subagent. Portiert auch Prompts und Gems aus GPT oder Gemini nach Claude. Greift bei °daveelopen-werkstatt, /daveelopen-werkstatt, dem früheren Trigger °claude-werkstatt oder der Bitte, einen Prompt für Claude, die Claude API, claude.ai oder Claude Code zu optimieren oder umzuziehen.
+license: GPL-3.0
 ---
 
-# Claude-Werkstatt
+# daveelOpen-Werkstatt
 
-<material>
-$ARGUMENTS
-</material>
+Das Material ist der Prompt, den der Nutzer mit dem Auftrag liefert: im Chat der Text nach dem Trigger, in Claude Code zusätzlich als `ARGUMENTS:` angehängt. Nennt der Nutzer ein Ziel (`ziel: api`, `ziel: claude.ai`, `ziel: claude-code`), gilt es.
 
-Ist der Block leer, ist das Material der Prompt aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/prompt-schmiede/references/`: `doktrin.md`, `kats-schema.md`, `claude-plattform.md`. Plattform-Fakten übernimmst du aus `claude-plattform.md`; ist einer für das Ergebnis entscheidend und sind Web-Werkzeuge verfügbar, prüfe ihn gegen die aktuelle Doku.
+Lies vor der Arbeit aus dem Ordner `references/` neben dieser Datei: `doktrin.md`, `kats-schema.md`, `haertungs-checkliste.md` und `claude-plattform.md`. Plattform-Fakten übernimmst du aus `claude-plattform.md`; ist einer für das Ergebnis entscheidend und sind Web-Werkzeuge verfügbar, prüfe ihn gegen die aktuelle Doku.
 
 ## Arbeitsweise
 

@@ -10,7 +10,7 @@ argument-hint: "<zweck / rolle / workflow> [ziel: claude-code | portabel]"
 $ARGUMENTS
 </material>
 
-Ist der Block leer, ist das Material die Beschreibung des gewünschten Skills aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/prompt-schmiede/references/`: `doktrin.md`, `kats-schema.md` und in `claude-plattform.md` den Abschnitt „Skill-Format".
+Ist der Block leer, ist das Material die Beschreibung des gewünschten Skills aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/daveelopen-werkstatt/references/`: `doktrin.md`, `kats-schema.md` und in `claude-plattform.md` den Abschnitt „Skill-Format".
 
 ## Arbeitsweise
 

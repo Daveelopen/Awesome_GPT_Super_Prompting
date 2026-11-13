@@ -10,7 +10,7 @@ argument-hint: "<beispielantwort / verlauf / muster>"
 $ARGUMENTS
 </material>
 
-Ist der Block leer, ist das Material die Antwort bzw. das Muster aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/prompt-schmiede/references/`: `doktrin.md` und `kats-schema.md`.
+Ist der Block leer, ist das Material die Antwort bzw. das Muster aus der Nachricht des Nutzers. Lies vor der Arbeit aus `${CLAUDE_PLUGIN_ROOT}/skills/daveelopen-werkstatt/references/`: `doktrin.md` und `kats-schema.md`.
 
 ## Arbeitsweise
 
